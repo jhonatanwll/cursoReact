@@ -12,7 +12,7 @@ function Data() {
       </div>
       <div>
         <p>Valor outro: {anotherNumber}</p>
-        <button onClick={() => setAnotherNumber(20)}>MudarState</button>
+        <button onClick={() => setAnotherNumber(25)}>MudarState</button>
       </div>
     </div>
   );
