@@ -1,9 +1,12 @@
 import "./App.css";
 // 2 - imagem em assets
 import night from "./assets/night.jpg";
-import Data from "./components/Data";
 
 // 3 - useState
+import Data from "./components/Data";
+
+// 4 - renderizacao de lista 
+import ListRender from "./components/ListRender";
 
 function App() {
   return (
@@ -16,6 +19,10 @@ function App() {
 
       {/* 3 - useState */}
       <Data />  
+
+    {/* 4 - render de lista  */}
+    <ListRender />
+      
     </div>
   );
 }
