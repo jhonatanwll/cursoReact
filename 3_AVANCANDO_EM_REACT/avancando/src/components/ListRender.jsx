@@ -10,20 +10,31 @@ const ListRender = () => {
     { id: 4, name: "Everton", age: 28 },
   ]);
 
+  const deleteRandom = () => {
+    const randomNumber = Math.floor(Math.random() * 5);
+    setUsers((prevUsers) =>
+      prevUsers.filter((user) => randomNumber !== user.id)
+    );
+  };
+
   return (
     <div>
-        {/* 4 - render sem key */}
+      {/* 4 - render sem key */}
       <ul>
         {list.map((item, i) => (
-          <li key={i} >{item}</li>
+          <li key={i}>{item}</li>
         ))}
       </ul>
       {/* 5 - render com key */}
       <ul>
         {users.map((user) => (
-            <li key={user.id}>{user.name} - {user.age} anos</li>
+          <li key={user.id}>
+            {user.name} - {user.age} anos
+          </li>
         ))}
       </ul>
+      {/* 6 - previous state */}
+      <button onClick={deleteRandom}>Delete random user</button>
     </div>
   );
 };
