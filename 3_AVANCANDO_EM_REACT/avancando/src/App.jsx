@@ -24,6 +24,13 @@ const cars = [
   { id: 3, brand: "Ducat", color: "Dourado", km: 0 },
 ];
 
+// 12 - Fragments
+import Fragment from "./components/Fragment";
+
+// 13 - Container
+import Container from "./components/Container";
+import { Children } from "react";
+
 function App() {
   return (
     <div className="App" style={{ paddingBottom: "500px" }}>
@@ -49,13 +56,25 @@ function App() {
       <CarDetails brand="Gol" km={0 + "km"} color="Azul" />
       {/* 11 - Renderização de listas com componente */}
       {cars.map((car) => (
-        <CarDetails 
-        key={car.id}
-        brand={car.brand}
-        color={car.color}
-        km={car.km}
+        <CarDetails
+          key={car.id}
+          brand={car.brand}
+          color={car.color}
+          km={car.km}
         />
       ))}
+      {/* 12 - Fragments */}
+      <Fragment />
+      {/* 13 - Children */}
+      <Container>
+          <p>Children 1</p>
+          <h2>Hi</h2>
+      </Container>
+      <Container>
+        <p>Children 2</p>
+        <p>Hey there!</p>
+      </Container>
+              
     </div>
   );
 }
