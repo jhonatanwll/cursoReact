@@ -29,9 +29,28 @@ import Fragment from "./components/Fragment";
 
 // 13 - Container
 import Container from "./components/Container";
-import { Children } from "react";
+
+// 14 - Função através do prop
+import ExecuteFunction from "./components/ExecuteFunction";
+
+// 15 - State Lift
+import { useState } from "react";
+import Message from "./components/Message";
+import ChangeMessage from "./components/ChangeMessage";
+
 
 function App() {
+  //  14 - Função em Prop
+  function showMessage() {
+    console.log("Evento do component pai");
+  }
+  // 15 - State lift
+  const [message, setMessage] = useState("");
+
+  const handleMessage = (msg) => {
+    setMessage(msg);
+  };
+
   return (
     <div className="App" style={{ paddingBottom: "500px" }}>
       <h1>Avaçando em React</h1>
@@ -65,16 +84,21 @@ function App() {
       ))}
       {/* 12 - Fragments */}
       <Fragment />
+
       {/* 13 - Children */}
       <Container>
-          <p>Children 1</p>
-          <h2>Hi</h2>
+        <p>Children 1</p>
+        <h2>Hi</h2>
       </Container>
       <Container>
         <p>Children 2</p>
         <p>Hey there!</p>
       </Container>
-              
+      {/* 14 - Função atraves de prop  */}
+      <ExecuteFunction myFunction={showMessage} />
+      {/* 15 - State lift */}
+      <Message msg={message}/>
+      <ChangeMessage handleMessage={handleMessage} />
     </div>
   );
 }
