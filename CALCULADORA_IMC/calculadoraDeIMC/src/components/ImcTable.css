@@ -19,7 +19,7 @@
   flex-direction: column;
 }
 #imc-table {
-  margin: 1.5rem;
+  margin: 1.5rem 0;
   font-size: 0.8rem;
 }
 .table-header {
@@ -34,3 +34,4 @@
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #444;
 }
+

@@ -14,9 +14,11 @@ const ImcTable = ({ data, imc, info, infoClass, resetCalc }) => {
       </p>
       <h3>Confira as classificações:</h3>
       <div id="imc-table">
-        <h4>IMC</h4>
-        <h4>Classificação</h4>
-        <h4>Obesidade</h4>
+        <div className="table-header">
+          <h4>IMC</h4>
+          <h4>Classificação</h4>
+          <h4>Obesidade</h4>
+        </div>
       </div>
       {data.map((item) => (
         <div className="table-data" key={item.info}>
