@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "./Button";
 
+import "./ImcTable.css";
+
 const ImcTable = ({ data, imc, info, infoClass, resetCalc }) => {
   return (
     <div id="result-container">
