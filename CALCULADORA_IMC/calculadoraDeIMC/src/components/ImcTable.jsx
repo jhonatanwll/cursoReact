@@ -19,7 +19,6 @@ const ImcTable = ({ data, imc, info, infoClass, resetCalc }) => {
           <h4>Classificação</h4>
           <h4>Obesidade</h4>
         </div>
-      </div>
       {data.map((item) => (
         <div className="table-data" key={item.info}>
           <p>{item.classification}</p>
@@ -27,6 +26,7 @@ const ImcTable = ({ data, imc, info, infoClass, resetCalc }) => {
           <p>{item.obesity}</p>
         </div>
       ))}
+      </div>
       <div>
         <Button id="back-btn" text="Voltar" action={resetCalc} />
       </div>
