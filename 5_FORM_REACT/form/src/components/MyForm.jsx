@@ -10,7 +10,7 @@ const MyForm = () => {
     setName(e.target.value);
   };
 
-  console.log(name);
+  console.log(name, email);
 
   return (
     <div>
@@ -33,6 +33,7 @@ const MyForm = () => {
             type="text"
             name="email"
             placeholder="Digite o seu nome"
+            // 4 - Simplificando a manipulação 
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
