@@ -1,13 +1,29 @@
 import { useState } from "react";
 import classes from "./MyForm.module.css";
 
-const MyForm = () => {
+const MyForm = ({ userName, userEmail }) => {
   // 3 - gerenciamento de dados
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
+  const [name, setName] = useState(userName);
+  const [email, setEmail] = useState(userEmail);
+
+  const [bio, setBio] = useState("");
 
   const handleName = (e) => {
     setName(e.target.value);
+  };
+
+  //  5 - envio de form
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name, email, bio);
+
+    // validacao
+    // envio
+
+    // 7 - limpar o form
+    setName("");
+    setEmail("");
+    setBio("")
   };
 
   console.log(name, email);
@@ -16,7 +32,8 @@ const MyForm = () => {
     <div>
       {/* <h1 className={classes.title}>My Form</h1> */}
       {/* 1 - criação de form */}
-      <form>
+      {/* 5 - envio de formulario */}
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="  name">Nome:</label>
           <input
@@ -24,6 +41,8 @@ const MyForm = () => {
             name="name"
             placeholder="Digite o seu nome"
             onChange={handleName}
+            //  6 - controlled input
+            value={name}
           />
         </div>
         {/* 2 - label envolvendo Input */}
@@ -33,11 +52,24 @@ const MyForm = () => {
             type="text"
             name="email"
             placeholder="Digite o seu nome"
-            // 4 - Simplificando a manipulação 
+            // 4 - Simplificando a manipulação
             onChange={(e) => setEmail(e.target.value)}
+            // 6 - controlled input
+            value={email}
           />
         </label>
+        {/* 8 - textarea */}
+        <label>
+          <span>Bio:</span>
+          <textarea
+            name="bio"
+            placeholder="Descrição do usuário"
+            onChange={(e) => setBio(e.target.value)}
+            value={bio || ""}
+          ></textarea>
+        </label>
         <input type="submit" value="Enviar" />
+
         <h2>Name: {name}</h2>
         <h2>Email: {email}</h2>
       </form>
