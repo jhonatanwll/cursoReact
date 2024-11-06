@@ -10,23 +10,31 @@ import ErrorPage from "./routes/ErrorPage.jsx";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 // 3 - Componente base
 import Home from "./routes/Home.jsx";
+// 7 - rota dinâmica
+import Product from "./routes/Product.jsx";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     // 3 - COmponente base
     children: [
       {
         path: "/",
-        element: <Home/>
+        element: <Home />,
       },
       {
         path: "contact",
-        element: <Contact />
-      }
-    ]
+        element: <Contact />,
+      },
+      //  7 - rota dinâmica
+      {
+        path: "products/:id",
+        element: <Product />,
+      },
+    ],
   },
   // {
   //   path: "contact",
@@ -36,6 +44,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router } />     
+    <RouterProvider router={router} />
   </StrictMode>
 );
