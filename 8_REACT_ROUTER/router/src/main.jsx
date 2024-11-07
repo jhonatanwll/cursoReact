@@ -12,7 +12,8 @@ import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Home from "./routes/Home.jsx";
 // 7 - rota dinâmica
 import Product from "./routes/Product.jsx";
-
+// 8 - nested route
+import Info from "./routes/Info.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
       {
         path: "products/:id",
         element: <Product />,
+      },
+      {
+        // 8 - nested route
+        path: "products/:id/info",
+        element: <Info />,
       },
     ],
   },
