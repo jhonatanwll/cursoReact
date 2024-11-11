@@ -7,7 +7,12 @@ import { Contact } from "./routes/Contact.jsx";
 // 2 - pagina de erro
 import ErrorPage from "./routes/ErrorPage.jsx";
 // 1 - Configurando o router
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Navigate,
+} from "react-router-dom";
 // 3 - Componente base
 import Home from "./routes/Home.jsx";
 // 7 - rota dinâmica
@@ -46,6 +51,10 @@ const router = createBrowserRouter([
         //  9 - Search
         path: "search",
         element: <Search />,
+      },
+      {
+        path: "teste",
+        element: <Navigate to="/" />,
       },
     ],
   },
