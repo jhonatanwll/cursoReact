@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     // embaralhar as perguntas
-    dispatch({ type: "REORDER-QUESTIONS" });
+    dispatch({ type: "REORDER_QUESTIONS" });
   }, []);
 
   return (
