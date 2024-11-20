@@ -1,4 +1,5 @@
 // react, components, stactics
+import { useEffect } from "react";
 import { useContext } from "react";
 import { QuizContext } from "./context/quiz";
 
@@ -9,6 +10,11 @@ import "./App.css";
 
 function App() {
   const [quizState, dispatch] = useContext(QuizContext);
+
+  useEffect(() => {
+    // embaralhar as perguntas
+    dispatch({ type: "REORDER-QUESTIONS" });
+  }, []);
 
   return (
     <div class="App">
