@@ -16,6 +16,7 @@ const Question = () => {
     });
   };
 
+  console.log(quizState);
   return (
     <div id="question">
       <p>
