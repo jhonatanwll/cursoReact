@@ -7,11 +7,12 @@
 }
 
 #question h2 {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 #question p {
   margin-bottom: 1rem;
 }
 #question button {
-    border: 3px solid #fff;
+  border: 3px solid #fff;
+  margin: 0.5rem;
 }
