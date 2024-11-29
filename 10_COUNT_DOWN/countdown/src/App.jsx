@@ -1,11 +1,14 @@
+import "./App.css";
+import NewYear from "./assets/newyear.jpg";
+
 import Title from "../components/Title";
 import Counter from "../components/Counter";
 
-import NewYear from "./assets/newyear.jpg";
-
-import "./App.css";
+import useCountdown from "../hooks/useCountdown";
 
 function App() {
+  const x = useCountdown("Jan 1, 2025 00:00:00");
+
   return (
     <div className="App" style={{ backgroundImage: `url(${NewYear})` }}>
       <div className="container">
