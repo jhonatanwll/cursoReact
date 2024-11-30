@@ -1,23 +1,38 @@
 import { useState } from "react";
 
 const useCountdown = (date) => {
-  const countDate = new Date(date).getTime();
-  const now = new Date().getTime();
+  const [day, setDay] = useState();
+  const [hour, setHour] = useState();
+  const [minute, setMinute] = useState();
+  const [second, setSecond] = useState();
 
-  const interval = countDate - now;
-  const second = 1000;
-  const minute = second * 60;
-  const hour = minute * 60;
-  const day = hour * 24;
+  const countdown = () => {
+    const countDate = new Date(date).getTime();
+    const now = new Date().getTime();
 
-  const dayNumber = Math.floor(interval / day);
-  const hourNumber = Math.floor((interval % day) / hour);
-  const minuteNumber = Math.floor((interval % hour) / minute);
-  const secondNumber = Math.floor((interval % minute) / second);
+    const interval = countDate - now;
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
 
-  console.log(dayNumber, hourNumber, minuteNumber, secondNumber);
+    const dayNumber = Math.floor(interval / day);
+    const hourNumber = Math.floor((interval % day) / hour);
+    const minuteNumber = Math.floor((interval % hour) / minute);
+    const secondNumber = Math.floor((interval % minute) / second);
 
-  return 1;
+    setDay(dayNumber);
+    setHour(hourNumber);
+    setMinute(minuteNumber);
+    setSecond(secondNumber);
+    console.log(hourNumber);
+  };
+
+  setInterval(countdown, 1000);
+
+  // console.log(dayNumber, hourNumber, minuteNumber, secondNumber);
+
+  return [day, hour, minute, second];
 };
 
 export default useCountdown;
