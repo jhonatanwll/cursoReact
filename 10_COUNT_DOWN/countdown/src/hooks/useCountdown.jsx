@@ -25,12 +25,9 @@ const useCountdown = (date) => {
     setHour(hourNumber);
     setMinute(minuteNumber);
     setSecond(secondNumber);
-    console.log(hourNumber);
   };
 
   setInterval(countdown, 1000);
-
-  // console.log(dayNumber, hourNumber, minuteNumber, secondNumber);
 
   return [day, hour, minute, second];
 };
