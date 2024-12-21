@@ -17,7 +17,51 @@ const serviceController = {
       console.log(error);
     }
   },
-  // getAll: async (req, res)
+  getAll: async (req, res) => {
+    try {
+      const services = await ServiceModel.find();
+
+      res.json(services);
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  get: async (req, res) => {
+    try {
+      // id => URL === GET
+      const id = req.params.id;
+      const service = await ServiceModel.findById(id);
+
+      if (!service) {
+        res.status(404).json({ msg: "Serviço não encontrado" });
+        return;
+      }
+
+      res.json(service);
+    } catch {
+      console.log(error);
+    }
+  },
+  delete: async (req, res) => {
+    try {
+      const id = req.params.id;
+
+      const service = await ServiceModel.findById(id);
+
+      if (!service) {
+        res.status(404).json({ msg: "Serviço não encontrado" });
+        return;
+      }
+
+      const deletedService = await ServiceModel.findByIdAndDelete(id);
+
+      res
+        .status(200)
+        .json({ deletedService, msg: "Serviço excluído com sucesso" });
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
 
 module.exports = serviceController;
