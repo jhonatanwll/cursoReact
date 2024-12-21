@@ -26,3 +26,35 @@ Content-Type: application/json
     "price": 2500,
     "image": "https://images.unsplash.com/photo-1730829807423-83b045bd6cfd?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 }
+
+### 
+POST http://localhost:3000/api/parties
+Content-Type: application/json
+
+{
+    "title": "Meu evento 2",
+    "author": "Jhonatan",
+    "description": "Uma festa de aniversário",
+    "budget": 9000,
+    "image": "https://images.unsplash.com/photo-1730829807423-83b045bd6cfd?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "services": [
+    {
+        "name" : "Algum serviço 1",
+        "description":"Alguma descricao",
+        "price": 1000,
+        "image": "https://images.unsplash.com/photo-1730829807423-83b045bd6cfd?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name" : "Algum serviço 2",
+        "description":"Alguma descricao",
+        "price": 2000,
+        "image": "https://images.unsplash.com/photo-1730829807423-83b045bd6cfd?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name" : "Algum serviço 3",
+        "description":"Alguma descricao",
+        "price": 3000,
+        "image": "https://images.unsplash.com/photo-1730829807423-83b045bd6cfd?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+    ]
+}
