@@ -6,6 +6,7 @@
 .parties-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 1.5rem;
   padding: 0 2rem;
 }
 
