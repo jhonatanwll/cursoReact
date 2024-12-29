@@ -1,0 +1,27 @@
+POST http://localhost:3000/memories
+Content-Type: multipart/form-data; boundary=----1234567890
+Content-Length: auto
+
+------1234567890
+Content-Disposition: form-data; name="title"
+
+cachorro
+------1234567890
+Content-Disposition: form-data; name="description"
+
+Uma imagem de um cachorro
+------1234567890
+Content-Disposition: form-data; name="image"; filename="dog.png"
+Content-Type: image/png
+
+< C:\Users\win10\Downloads\dog.png
+------1234567890--
+
+###
+GET http://localhost:3000/memories
+
+###
+GET http://localhost:3000/memories/6771a31d0eeb5eea3d1489ec
+
+###
+DELETE http://localhost:3000/memories/6771a31d0eeb5eea3d1489ec
